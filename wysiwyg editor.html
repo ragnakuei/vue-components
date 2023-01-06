@@ -8,8 +8,13 @@
     <div id="app" class="container" v-cloak >
       <vue_nav></vue_nav>
 
+      <p>編輯區</p>
       <wysiwyg v-model="text"></wysiwyg>
 
+      <hr />
+
+      <p>預覽區</p>
+      <div v-html="text"></div>
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>

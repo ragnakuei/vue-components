@@ -30,19 +30,25 @@ const wysiwyg = {
 
         <div class="item delimiter"></div>
 
-        <button class="item trash" v-on:click="doc_execCommand('delete')"></button>
-
+        
+        <!--
+        <button class="item delete" v-on:click="doc_execCommand('delete')"></button>
         <button class="item scribd" v-on:click="doc_execCommand('selectAll')"></button>
         <button class="item clone" v-on:click="copy()"></button>
+        -->
 
+        <div class="item delimiter"></div>
         <!-- Jutify -->
-
         <button class="item align-center" v-on:click="doc_execCommand('justifyCenter')"></button>
         <button class="item align-left" v-on:click="doc_execCommand('justifyLeft')"></button>
         <button class="item align-right" v-on:click="doc_execCommand('justifyRight')"></button>
     </div>
     <hr />
-    <div class="editor" contenteditable v-html="domValue">
+    <div class="editor" ref="editor_dom" contenteditable></div>
+    <hr />
+    <div class="footer">
+        <button class="item delete" v-on:click="reset()"></button>
+        <button class="item check" v-on:click="apply()"></button>
     </div>
 </div>
           `,
@@ -51,16 +57,7 @@ const wysiwyg = {
     },
     setup(props, { emit }) {
     
-        const domField = ref(props.modelValue);
-        const domValue = computed({
-            get: () => {
-              return domField.value;
-            },
-            set: (v) => {
-              domField.value = v;
-              emit("update:modelValue", v);
-            },
-          });
+      const editor_dom = ref(null);
 
       const doc_execCommand = function(command, showUI, value) {
         document.execCommand(command, showUI, value);
@@ -90,7 +87,7 @@ const wysiwyg = {
     
                 // 產生 img tag string
                 const img = `<img src="${dataURI}" />`;
-                domValue.value += img;
+                editor_dom.value.innerHTML += img;
             }
 
             // 清空 input file
@@ -118,15 +115,28 @@ const wysiwyg = {
       }
 
 
-      onMounted(() => {});
+        const reset = function() {
+            // 重新初始化編輯器的內容為傳入的 modelValue
+            editor_dom.value.innerHTML = props.modelValue;
+        }
+
+        const apply = function() {
+            emit("update:modelValue", editor_dom.value.innerHTML);
+        }
+
+      onMounted(() => {
+        editor_dom.value.innerHTML = props.modelValue;
+      });
   
       return {
-        domValue,
+        editor_dom,
         doc_execCommand,
         insert_link,
         insert_image,
         insert_image_dom,
         changeFontColor,
+        reset,
+        apply,
       };
     },
   };

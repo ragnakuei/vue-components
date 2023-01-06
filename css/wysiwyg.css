@@ -10,7 +10,7 @@
   margin: 10px;
 }
 
-.wysiwyg .toolbar .item {
+.wysiwyg button {
   border: unset;
   width: 30px;
   height: 30px;
@@ -21,41 +21,51 @@
   background-size: 20px 20px;
 }
 
-.wysiwyg .toolbar .item:hover {
+.wysiwyg button:hover {
   background-color: #bbbbbb;
 }
 
-.wysiwyg .toolbar .item.undo {
+.wysiwyg button.undo {
   background-image: url(../images/rotate-left-solid.svg);
 }
-.wysiwyg .toolbar .item.redo {
+.wysiwyg button.redo {
   background-image: url(../images/rotate-right-solid.svg);
 }
-.wysiwyg .toolbar .item.delimiter {
+.wysiwyg button.delimiter {
   width: 1px;
   background-color: black;
 }
-.wysiwyg .toolbar .item.underline {
+.wysiwyg button.underline {
   background-image: url(../images/underline-solid.svg);
 }
-.wysiwyg .toolbar .item.italic {
+.wysiwyg button.italic {
   background-image: url(../images/italic-solid.svg);
 }
-.wysiwyg .toolbar .item.bold {
+.wysiwyg button.bold {
   background-image: url(../images/bold-solid.svg);
 }
-.wysiwyg .toolbar .item.link {
+.wysiwyg button.link {
   background-image: url(../images/link-solid.svg);
 }
-.wysiwyg .toolbar .item.file-image {
+.wysiwyg label.file-image {
   background-image: url(../images/image-solid.svg);
   cursor: pointer;
+  width: 30px;
 }
-.wysiwyg .toolbar .item.font-color {
+.wysiwyg button.font-color {
   background-image: url(../images/droplet-solid.svg);
 }
-.wysiwyg .toolbar .item.strikethrough {
+.wysiwyg button.strikethrough {
   background-image: url(../images/strikethrough-solid.svg);
+}
+.wysiwyg button.delete {
+  background-image: url(../images/xmark-solid.svg);
+}
+.wysiwyg button.check {
+  background-image: url(../images/check-solid.svg);
+}
+.wysiwyg button.reset {
+  background-image: url(../images/trash-can-solid.svg);
 }
 
 .wysiwyg hr {
@@ -64,4 +74,13 @@
 
 .wysiwyg .editor {
   padding: 10px;
+  width: 100%;
+}
+
+.wysiwyg .footer {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 15px;
 }
