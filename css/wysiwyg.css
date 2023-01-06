@@ -1,0 +1,61 @@
+.wysiwyg {
+  border: 1px solid #747474;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px #e4e4e4;
+}
+.wysiwyg .toolbar {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin: 10px;
+}
+
+.wysiwyg .toolbar .item {
+  border: unset;
+  width: 30px;
+  height: 30px;
+
+  background-color: unset;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.wysiwyg .toolbar .item:hover {
+  background-color: #bbbbbb;
+}
+
+.wysiwyg .toolbar .item.undo {
+  background-image: url(/images/rotate-left-solid.svg);
+}
+.wysiwyg .toolbar .item.redo {
+  background-image: url(/images/rotate-right-solid.svg);
+}
+.wysiwyg .toolbar .item.delimiter {
+  width: 1px;
+  background-color: black;
+}
+.wysiwyg .toolbar .item.underline {
+  background-image: url(/images/underline-solid.svg);
+}
+.wysiwyg .toolbar .item.italic {
+  background-image: url(/images/italic-solid.svg);
+}
+.wysiwyg .toolbar .item.bold {
+  background-image: url(/images/bold-solid.svg);
+}
+.wysiwyg .toolbar .item.link {
+  background-image: url(/images/link-solid.svg);
+}
+.wysiwyg .toolbar .item.file-image {
+  background-image: url(/images/image-solid.svg);
+  cursor: pointer;
+}
+
+.wysiwyg hr {
+  margin: 0;
+}
+
+.wysiwyg .editor {
+  padding: 10px;
+}
