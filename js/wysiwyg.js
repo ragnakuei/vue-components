@@ -16,7 +16,13 @@ const wysiwyg = {
 
         <button class="item link" v-on:click="insert_link()"></button>
 
-        <input type="file" accept="image/*" style="display: none;" id="insert_image" v-on:change="insert_image($event.target)">
+        <input type="file" 
+               accept="image/*" 
+               style="display: none;" 
+               id="insert_image" 
+               v-on:change="insert_image($event.target)"
+               ref="insert_image_dom"
+               >
         <label class="item file-image" for="insert_image"></label>
 
         <button class="item tint" v-on:click="changeColor()"></button>
@@ -64,6 +70,7 @@ const wysiwyg = {
         }
       }
   
+      const insert_image_dom = ref(null);
       const insert_image = function(target) {
         const file = target.files[0];
         const reader = new FileReader();
@@ -82,6 +89,9 @@ const wysiwyg = {
                 const img = `<img src="${dataURI}" />`;
                 domValue.value += img;
             }
+
+            // 清空 input file
+            insert_image_dom.value.value = null;
           },
           false
         );
@@ -98,6 +108,7 @@ const wysiwyg = {
         doc_execCommand,
         insert_link,
         insert_image,
+        insert_image_dom,
       };
     },
   };
