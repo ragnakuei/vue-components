@@ -26,29 +26,29 @@
 }
 
 .wysiwyg .toolbar .item.undo {
-  background-image: url(/images/rotate-left-solid.svg);
+  background-image: url(../images/rotate-left-solid.svg);
 }
 .wysiwyg .toolbar .item.redo {
-  background-image: url(/images/rotate-right-solid.svg);
+  background-image: url(../images/rotate-right-solid.svg);
 }
 .wysiwyg .toolbar .item.delimiter {
   width: 1px;
   background-color: black;
 }
 .wysiwyg .toolbar .item.underline {
-  background-image: url(/images/underline-solid.svg);
+  background-image: url(../images/underline-solid.svg);
 }
 .wysiwyg .toolbar .item.italic {
-  background-image: url(/images/italic-solid.svg);
+  background-image: url(../images/italic-solid.svg);
 }
 .wysiwyg .toolbar .item.bold {
-  background-image: url(/images/bold-solid.svg);
+  background-image: url(../images/bold-solid.svg);
 }
 .wysiwyg .toolbar .item.link {
-  background-image: url(/images/link-solid.svg);
+  background-image: url(../images/link-solid.svg);
 }
 .wysiwyg .toolbar .item.file-image {
-  background-image: url(/images/image-solid.svg);
+  background-image: url(../images/image-solid.svg);
   cursor: pointer;
 }
 
