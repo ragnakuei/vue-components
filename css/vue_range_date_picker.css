@@ -1,0 +1,281 @@
+.vue-date-range-picker-calendar {
+  position: relative;
+}
+
+.vue-date-range-picker-calendar .calendar-wrapper {
+  background: #fff;
+  margin: 2px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  border: 1px solid #747474;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px #e4e4e4;
+  padding: 10px;
+
+  position: absolute;
+  top: 30px;
+}
+
+.vue-date-range-picker-calendar .calendar-wrapper > div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.vue-date-range-picker-calendar .calendar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 99;
+  width: 280px;
+
+  overflow: hidden;
+}
+
+.vue-date-range-picker-calendar .calendar-header {
+  background: #7548ff;
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 280px;
+  height: 40px;
+
+  /* 為了讓 */
+  position: relative;  
+}
+
+.vue-date-range-picker-calendar .calendar-nav-wrapper-left {
+  /* overflow: hidden; */
+  position: absolute;
+  left: 10px;
+}
+
+.vue-date-range-picker-calendar .calendar-nav-wrapper-right {
+  /* overflow: hidden; */
+  position: absolute;
+  right: 10px;
+}
+
+.vue-date-range-picker-calendar .calendar-nav {
+  all: unset;
+  cursor: pointer;
+  color: #b585ff;
+
+  -webkit-transform: scale(1.5, 2.5);
+  -moz-transform: scale(1.5, 2.5);
+  -o-transform: scale(1.5, 2.5);
+  transform: scale(1.5, 2.5);
+
+  padding-bottom: 3.2px;
+}
+
+.vue-date-range-picker-calendar .calendar-nav:hover {
+  color: white;
+}
+
+.vue-date-range-picker-calendar .year,
+.month {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.vue-date-range-picker-calendar .week {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+
+  color: #7548ff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.vue-date-range-picker-calendar .days {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 360px;
+}
+
+.vue-date-range-picker-calendar .week > div,
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+}
+
+.vue-date-range-picker-calendar .day.disallow {
+  cursor: not-allowed;
+}
+.vue-date-range-picker-calendar .day.disallow span:nth-child(1) {
+  position: absolute;
+}
+.vue-date-range-picker-calendar .day.disallow span:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-image: url("/images/ban.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+.vue-date-range-picker-calendar .day.in-month {
+}
+
+.vue-date-range-picker-calendar .day.not-in-month {
+  color: #cccccc;
+}
+
+.vue-date-range-picker-calendar .day.allow:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #7548ff;
+  overflow: hidden;
+}
+
+.vue-date-range-picker-calendar .is-today {
+  border-bottom: 3px solid #7548ff !important;
+}
+
+.vue-date-range-picker-calendar .is-today:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.vue-date-range-picker-calendar .start-date {
+  background-color: rgba(117, 72, 255, 0.6);
+  color: black;
+  border-radius: 7px 0 0 7px;
+}
+
+.vue-date-range-picker-calendar .ranged-date {
+  background-color: rgba(117, 72, 255, 0.2);
+  color: black;
+}
+
+.vue-date-range-picker-calendar .end-date {
+  background-color: rgba(117, 72, 255, 0.6);
+  color: black;
+  border-radius: 0 7px 7px 0;
+}
+
+.vue-date-range-picker-calendar .start-date.end-date {
+  border-radius: 7px 7px 7px 7px !important;
+}
+
+.vue-date-range-picker-calendar .is-selected-day:hover {
+  border-radius: 0;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+}
+
+.vue-date-range-picker-calendar .tool-bar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  white-space: nowrap;
+  gap: 5px;
+  z-index: 99;
+}
+
+.vue-date-range-picker-calendar .tool-bar > button {
+  border: 1px solid #747474;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px #e4e4e4;
+  background: white;
+  padding: 5px 15px;
+  font-size: 16px;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.vue-date-range-picker-calendar .tool-bar > button:hover {
+  cursor: pointer;
+  background: #000000;
+  color: white;
+  overflow: hidden;
+}
+
+.vue-date-range-picker-calendar .wrapper-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /*background: rgba(0, 0, 50, 50%); // debug 用*/
+  z-index: 98;
+}
+
+
+.vue-date-range-picker-calendar .calendar-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+}
+
+.vue-date-range-picker-calendar .calendar-footer > input {
+  border-radius: 5px;
+  padding: 2px;
+  width: 120px;
+  text-align: center;
+}
+
+
+.vue-date-range-picker-calendar .calendar-footer .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.vue-date-range-picker-calendar .calendar-footer .buttons .clear {
+  padding: 5px 10px;
+  background: #cccccc;
+  border: 0;
+  border-radius: 5px;
+}
+.vue-date-range-picker-calendar .calendar-footer .buttons .apply {
+  padding: 5px 10px;
+  background: #7548ff;
+  color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+}
+.vue-date-range-picker-calendar .calendar-footer .buttons .disabled {
+  background: #cccccc !important;
+}
