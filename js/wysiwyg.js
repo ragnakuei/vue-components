@@ -12,6 +12,8 @@ const wysiwyg = {
         <button class="item italic" v-on:click="doc_execCommand('italic')"></button>
         <button class="item bold" v-on:click="doc_execCommand('bold')"></button>
 
+        <button class="item font-color" v-on:click="changeFontColor()"></button>
+        
         <div class="item delimiter"></div>
 
         <button class="item link" v-on:click="insert_link()"></button>
@@ -25,7 +27,8 @@ const wysiwyg = {
                >
         <label class="item file-image" for="insert_image"></label>
 
-        <button class="item tint" v-on:click="changeColor()"></button>
+        <div class="item delimiter"></div>
+
         <button class="item strikethrough" v-on:click="doc_execCommand('strikeThrough')"></button>
         <button class="item trash" v-on:click="doc_execCommand('delete')"></button>
 
@@ -101,6 +104,20 @@ const wysiwyg = {
         }
       }
 
+      const changeFontColor = function() {
+          // check selection
+          const selection = window.getSelection();
+          if(selection.rangeCount === 0) {
+              return;
+          }
+
+          const color = prompt("Enter the font color here: ", "#");
+          if(color) {
+              doc_execCommand("foreColor", false, color);
+          }
+      }
+
+
       onMounted(() => {});
   
       return {
@@ -109,6 +126,7 @@ const wysiwyg = {
         insert_link,
         insert_image,
         insert_image_dom,
+        changeFontColor,
       };
     },
   };

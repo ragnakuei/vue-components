@@ -51,6 +51,10 @@
   background-image: url(../images/image-solid.svg);
   cursor: pointer;
 }
+.wysiwyg .toolbar .item.font-color {
+  background-image: url(../images/droplet-solid.svg);
+  cursor: pointer;
+}
 
 .wysiwyg hr {
   margin: 0;
