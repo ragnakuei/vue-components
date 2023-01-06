@@ -11,9 +11,10 @@ const wysiwyg = {
         <button class="item underline" v-on:click="doc_execCommand('underline')"></button>
         <button class="item italic" v-on:click="doc_execCommand('italic')"></button>
         <button class="item bold" v-on:click="doc_execCommand('bold')"></button>
+        <button class="item strikethrough" v-on:click="doc_execCommand('strikeThrough')"></button>
 
         <button class="item font-color" v-on:click="changeFontColor()"></button>
-        
+
         <div class="item delimiter"></div>
 
         <button class="item link" v-on:click="insert_link()"></button>
@@ -29,7 +30,6 @@ const wysiwyg = {
 
         <div class="item delimiter"></div>
 
-        <button class="item strikethrough" v-on:click="doc_execCommand('strikeThrough')"></button>
         <button class="item trash" v-on:click="doc_execCommand('delete')"></button>
 
         <button class="item scribd" v-on:click="doc_execCommand('selectAll')"></button>

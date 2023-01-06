@@ -53,7 +53,9 @@
 }
 .wysiwyg .toolbar .item.font-color {
   background-image: url(../images/droplet-solid.svg);
-  cursor: pointer;
+}
+.wysiwyg .toolbar .item.strikethrough {
+  background-image: url(../images/strikethrough-solid.svg);
 }
 
 .wysiwyg hr {
